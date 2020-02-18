@@ -1,0 +1,23 @@
+<script>
+
+  function saveData() {
+    sessionStorage.setItem('interests', document.getElementById("intField").value);
+  }
+
+</script>
+
+<%= form_with do |form| %>
+  <div class="row">
+    <div class="col">
+      <%= form.label :interests, class:"font-color" %><br>
+    </div>
+    <div class="col">
+      <%= form.text_field :interests, id: "intField"%>
+    </div>
+  </div>
+  <div class="actions">
+    <%= link_to home_index_path do %>
+      <%= submit_tag 'Continue', onclick: 'saveData();', class: "btn btn-warning btn-lg" %> 
+    <% end %>  
+  </div>
+  <% end %>

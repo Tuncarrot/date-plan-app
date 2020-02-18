@@ -1,0 +1,32 @@
+<script>
+    document.getElementById("city").innerHTML = sessionStorage.getItem("city");
+    document.getElementById("interests").innerHTML = sessionStorage.getItem("interests");
+</script>
+
+<div class="card-center w-75 adjust-top">
+  <div class="card-body transparent">
+    <h1 class="card-title font-color text-center">Plan your Date</h1>
+    <h5 class="card-text font-color text-center">Enter your city and interests to get started!</h5>
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+
+        <%= link_to 'Add City', addresses_new_path, class: "btn btn-warning btn-lg yellow-btn"%>
+
+        </div>
+        <div class="col d-flex justify-content-center">
+        <%= link_to 'Add Interests', interests_new_path, class: "btn btn-warning btn-lg yellow-btn"%>
+
+        </div>
+    </div>
+    <div class ="row">
+        <div class="col d-flex justify-content-center">
+            <h5 class="font-color" id="city"></h5>
+        </div>
+        <div class="col d-flex justify-content-center">
+            <h5 class="font-color" id="interests"></h5>
+        </div>
+    </div>
+        <div class="row d-flex justify-content-around">
+            <%= link_to 'Start', places_index_path, class: "btn btn-warning btn-lg"%>
+        </div>
+    </div>
