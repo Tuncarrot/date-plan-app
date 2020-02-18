@@ -1,0 +1,28 @@
+<% provide :head_tags do %>
+    <meta name='turbolinks-visit-control' content='reload'>  
+  
+    <script>
+      var map;
+  
+      document.addEventListener("DOMContentLoaded", function(){
+          map = initMap(sessionStorage.getItem('latitude'), sessionStorage.getItem('longitude'));
+      });
+  
+      </script>
+  <% end %>
+  
+  <div class="row">
+      <div class="col">
+          <%= link_to home_index_path do %>
+              <%= submit_tag 'Return', class: "btn btn-warning btn-lg" %> 
+          <% end %>
+      </div>
+      <div class="col">
+          <h1 class="font-color">Locations</h1>
+      </div>
+  </div>
+  
+  <p>
+      <div id="map"></div>
+  </p>
+  

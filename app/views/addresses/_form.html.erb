@@ -1,0 +1,41 @@
+<script>
+  $(document).ready(function(){
+    initFuncAuto();
+  });
+    function initFuncAuto() {
+
+      var options = {
+      types: ['(cities)'],
+      componentRestrictions: {country: "ca"}
+      };
+    
+      var input = document.getElementById('autocomplete');
+      var auto = new google.maps.places.Autocomplete(input, options);
+
+      google.maps.event.addListener(auto, 'place_changed', function () {
+        var place = auto.getPlace();
+        sessionStorage.setItem('latitude',place.geometry.location.lat());
+        sessionStorage.setItem('longitude',place.geometry.location.lng());
+        sessionStorage.setItem('city',place.name);
+        });
+    }
+</script>
+
+
+  <%= form_with do |form| %>
+  <div class="row">
+    <div class="col">
+      <%= form.label :city, class: "font-color" %><br>
+    </div>
+    <div class="col">
+      <%= form.text_field :city, id: 'autocomplete' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="actions col d-flex justify-content-center">
+      <%= link_to home_index_path do %>
+        <%= submit_tag 'Continue', class: "btn btn-warning btn-lg" %> 
+      <% end %>
+    </div>
+  </div>
+  <% end %>
