@@ -1,3 +1,43 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.adjust-top {
+    padding-top:150px;
+}
+
+.center-content {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.card-center {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}
+
+.background-image {
+    background-image: image-url('patternWallpaper.jpg');
+    background-repeat: repeat; 
+}
+
+.transparent {
+    background-color: rgba(50, 50,50,0.7);
+}
+
+.font-color {
+    color: whitesmoke;
+}
+
+.restore-trans {
+    opacity: 1.0;
+}
+
+.yellow-btn {
+    color: rgb(252, 255, 78);
+}
+
+.center {
+    margin: auto;
+}
